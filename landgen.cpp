@@ -726,7 +726,7 @@ void giantLandSwitch(cell *c, int d, cell *from) {
       if(d == 9) {
         if(randomPatternsMode) c->wall = RANDPAT ? waIcewall : waNone;
         else if(hrand(100) < 5 && c->wall != waBarrier) {
-          c->wall = waIcewall;
+          c->wall = waChasm;
           for(int i=0; i<c->type; i++) if(hrand(100) < 50) {
             cell *c2 = createMov(c, i);
             setdist(c2, d+1, c);
